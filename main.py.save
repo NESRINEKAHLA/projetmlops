@@ -1,0 +1,30 @@
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+ 
+def prepare_data(file_path):
+    data = pd.read_csv(file_path)
+    X = data.drop("Disease", axis=1)  # Remplace "target" par le nom de ta colonne cible
+    y = data["Disease"]
+    return train_test_split(X, y, test_size=0.2, random_state=42)
+ 
+def train_model(X_train, y_train):
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    return model
+ 
+def evaluate_model(model, X_test, y_test):
+    predictions = model.predict(X_test)
+    return accuracy_score(y_test, predictions)
+from model_pipeline import prepare_data, train_model, evaluate_model
+ 
+# Remplace le chemin si besoin
+file_path = "Churn_Modelling.csv"
+ 
+X_train, X_test, y_train, y_test = prepare_data(file_path)
+model = train_model(X_train, y_train)
+accuracy = evaluate_model(model, X_test, y_test)
+ 
+print(f"Accuracy du modèle : {accuracy:.2f}")from model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_modelfrom model_pipeline import prepare_data, train_model, evaluate_model
